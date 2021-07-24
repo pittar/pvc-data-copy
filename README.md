@@ -19,7 +19,7 @@ There are only two resources in this repository - only one of which you actually
 
 First, you will want to create your new `PersistentVolumeClaim`.  You should make sure to create it in the correct namespace.
 
-For this example, I want to expand the storage for my instance of *Nexux* from **10Gi** to **20Gi**.  My nexus instance currently resides in my `cicd` namespace.
+For this example, I want to expand the storage for my instance of *Nexus* from **10Gi** to **20Gi**.  My nexus instance currently resides in my `cicd` namespace.
 
 The new PVC will need a unique name.  So, first I'll check to see what the current PVC name is:
 
