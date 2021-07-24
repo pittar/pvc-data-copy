@@ -105,7 +105,7 @@ Now that you have:
 
 You're ready to copy some data!
 
-Now, simply apply create the Job (and watch the logs if you want to see the progress).
+Now, simply apply/create the Job (and watch the logs if you want to see the progress).
 
 ```
 $ oc apply -f copy-data-job.yaml -n cicd
