@@ -6,7 +6,7 @@ spec:
   template:
     spec:
       containers:
-        - image: registry.access.redhat.com/ubi7/ubi:7.9
+        - image: registry.access.redhat.com/ubi7/ubi-minimal:7.9
           command:
             - /bin/bash
             - -c
