@@ -98,8 +98,8 @@ You can take a look at the rest of the Job to see how it works, but there isn't 
 
 ### 3. Run the Job
 
-Now that:
-1. You hava create a new (larger) PVC.
+Now that you have:
+1. Created a new (larger) PVC with a new name.
 2. Stopped the Pod that's conneted to the old PVC.
 3. Copied and updated the `Job`.
 
