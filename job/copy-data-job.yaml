@@ -1,0 +1,42 @@
+apiVersion: batch/v1
+kind: Job
+metadata:
+  name: copy-data-job
+spec:
+  template:
+    spec:
+      containers:
+        - image: registry.access.redhat.com/ubi7/ubi:7.9
+          command:
+            - /bin/bash
+            - -c
+            - |
+              echo "About to copy data from the OLD pvc to the NEW pvc."
+              ls -la /data/oldpvc
+
+              cp -R /data/oldpvc/* /data/newpvc/
+
+              echo "Listing new PVC data."
+              
+              ls -la /data/newpvc
+
+              echo "Copy complete!"
+          volumeMounts:
+            - name: old-pvc
+              mountPath: /data/oldpvc
+            - name: new-pvc
+              mountPath: /data/newpvc
+          imagePullPolicy: Always
+          name: copy-data-job
+      volumes:
+        - name: old-pvc
+          persistentVolumeClaim:
+            claimName: nexus
+        - name: new-pvc
+          persistentVolumeClaim:
+            claimName: nexus-data
+      dnsPolicy: ClusterFirst
+      restartPolicy: OnFailure
+      serviceAccount: default
+      serviceAccountName: default
+      terminationGracePeriodSeconds: 30
