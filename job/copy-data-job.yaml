@@ -31,10 +31,10 @@ spec:
       volumes:
         - name: old-pvc
           persistentVolumeClaim:
-            claimName: nexus
+            claimName: <old PVC name>
         - name: new-pvc
           persistentVolumeClaim:
-            claimName: nexus-data
+            claimName: <new PVC name>
       dnsPolicy: ClusterFirst
       restartPolicy: OnFailure
       serviceAccount: default
